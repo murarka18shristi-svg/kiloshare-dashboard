@@ -1,0 +1,26 @@
+no,section,question,answer,column,feeds
+Q1,Screener,Have you taken at least one domestic flight within India in the last 12 months?,Yes / No (No ends the survey),(not stored),
+Q2,A. About you,What is your age?,"Number, 18+",age,Classification: predictor; Clustering: input
+Q3,A. About you,Which city do you live in?,Mumbai / Delhi / Bengaluru / Hyderabad / Chennai / Kolkata / Pune / Ahmedabad,city,Profiling: segment and city view
+Q4,A. About you,What is your occupation?,Student / Salaried / Business owner / Freelancer / Homemaker / Retired,occupation,Profiling: segment personas
+Q5,A. About you,What is your monthly household income?,<Rs 25k / 25k-50k / 50k-1L / 1L-2L / 2L+,monthly_income_band,Classification: predictor; Regression: driver of price
+Q6,B. Travel and baggage,How many domestic flights did you take in the last 12 months? (each one-way = 1),Number,domestic_flights_12m,Classification: predictor; Clustering: input
+Q7,B. Travel and baggage,Which fare type do you usually book?,Saver/basic / Flexi/value / Business/premium,usual_fare_type,Regression: driver of price
+Q8,B. Travel and baggage,"In the last 12 months, how many times was your checked bag over the free allowance?",Number (0 if never),times_exceeded_allowance_12m,Classification: predictor; Clustering: input; Regression: driver
+Q9,B. Travel and baggage,"On those trips, by roughly how many kg were you over, on average?",Kg (0 if never),avg_excess_kg,Classification: predictor; Regression: driver; Break-even: kg per transfer
+Q10,B. Travel and baggage,What does your checked bag usually weigh?,Kg,avg_checked_bag_kg,Classification: predictor; Clustering: input; Break-even: carriers with spare room
+Q11,B. Travel and baggage,Roughly how much did you pay in excess-baggage fees in the last 12 months?,Rs (0 if none),excess_fees_paid_12m_inr,Classification: predictor; Regression: driver
+Q12,C. Attitudes (1-5),I do not like other people handling my luggage.,Likert 1-5,possessiveness_luggage,Classification: predictor; Clustering: input; Regression: driver
+Q13,C. Attitudes (1-5),I could trust a verified stranger on my flight.,Likert 1-5,trust_strangers,Classification: predictor; Clustering: input; Regression: driver
+Q14,C. Attitudes (1-5),I worry about security problems from carrying someone else's items.,Likert 1-5,security_concern,Classification: predictor; Clustering: input; Regression: driver
+Q15,C. Attitudes (1-5),Saving money on baggage fees matters a lot to me.,Likert 1-5,price_sensitivity,Classification: predictor; Clustering: input; Regression: driver
+Q16,C. Attitudes (1-5),I am comfortable using new travel apps.,Likert 1-5,tech_comfort,Classification: predictor; Clustering: input; Regression: driver
+Q17,C. Attitudes (1-5),A staffed service counter at the airport would make me trust a new travel service.,Likert 1-5,counter_trust_boost,Classification: predictor; Clustering: input; Regression: driver
+Q18,D. Reaction to KiloShare (after the concept card),"Given the opportunity, would you use KiloShare to send your extra kilos?",Yes / No,would_use_app,Classification: TARGET (demand)
+Q19,D. Reaction to KiloShare (after the concept card),How likely are you to use KiloShare in the next 6 months?,1 Not at all likely ... 5 Definitely,usage_intent_6m,Clustering: high / medium / low conversion bands; Break-even: intent calibration
+Q20,D. Reaction to KiloShare (after the concept card),Which of these features would you want in KiloShare? Select all that apply.,"Multi-select, 10 features",F1 ... F10 (0/1),Association rules: one basket per respondent
+Q21,D. Reaction to KiloShare (after the concept card),What is the most you would pay per extra kg to send it with a co-passenger on your flight?,Rs per kg,wtp_p2p_per_kg_inr,Regression: TARGET (peer-to-peer price)
+Q22,D. Reaction to KiloShare (after the concept card),What is the most you would pay per extra kg to have it couriered to your destination in 2-3 days?,Rs per kg,wtp_forwarding_per_kg_inr,Regression: TARGET (forwarding price)
+Q23,D. Reaction to KiloShare (after the concept card),"If you had spare allowance, would you carry a verified, sealed pouch for a co-passenger?",Yes / No,would_carry,Classification: TARGET (supply)
+Q24,D. Reaction to KiloShare (after the concept card),What is the minimum credit per kg you would need to carry it?,Rs per kg,min_credit_per_kg_inr,Regression: TARGET (carrier price)
+Q25,D. Reaction to KiloShare (after the concept card),What is your biggest concern about a service like this?,Open text,biggest_concern_text,Text coding: concern themes
